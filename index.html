@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Community Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Elite Community Hub - Your Premium Trading Community">
+    <meta name="theme-color" content="#000000">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div class="login-container">
+        <button onclick="resetView()" class="back-button" id="backButton" style="display: none;">
+            <i class="fas fa-arrow-left"></i> Indietro
+        </button>
+        <div class="login-box">
+            <div class="login-buttons">
+                <button onclick="guestAccess()" class="guest-btn">
+                    <i class="fas fa-user"></i> Accedi come ospite
+                </button>
+                <button onclick="showAdvancedLogin()" class="advanced-btn">
+                    <i class="fas fa-crown"></i> Accedi come advanced
+                </button>
+            </div>
+            <div id="advanced-login" class="advanced-login-form" style="display: none;">
+                <input type="text" id="nickname" placeholder="Nickname" required>
+                <div class="password-container">
+                    <input type="password" id="hashcode" placeholder="Inserisci #..." required>
+                    <i class="fas fa-eye" id="togglePassword"></i>
+                </div>
+                <button onclick="validateLogin()" class="advanced-btn submit-btn">Accedi come Advanced</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (Initially Hidden) -->
+    <div id="mainContent" style="display: none;">
+        
+        
+  <div class="hamburger-menu">
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+    <div class="hamburger-line"></div>
+  </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo-container">
+                <img src="logo.jpg" alt="Logo" class="logo">
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="#trading" class="nav-link"><i class="fas fa-chart-line"></i> Trading</a>
+                <a href="#crypto" class="nav-link"><i class="fas fa-coins"></i> Crypto</a>
+                <a href="#memecoin" class="nav-link"><i class="fas fa-dog"></i> Memecoin</a>
+                <a href="#gambling" class="nav-link"><i class="fas fa-dice"></i> Gambling</a>
+                <a href="#gaming" class="nav-link"><i class="fas fa-gamepad"></i> Gaming</a>
+                <a href="#coding" class="nav-link"><i class="fas fa-code"></i> Coding</a>
+                <a href="#school" class="nav-link"><i class="fas fa-graduation-cap"></i> Scuola</a>
+                <a href="#music" class="nav-link"><i class="fas fa-music"></i> Musica</a>
+                <a href="#film" class="nav-link"><i class="fas fa-film"></i> Film</a>
+                <a href="#memes" class="nav-link"><i class="fas fa-laugh"></i> Memes</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="rewards-hero">
+        <div class="hero-content">
+            <h1 id="welcomeMessage">BE THE 1%</h1>
+            <p class="hero-subtitle">Unisciti all'élite della community</p>
+            <div id="userActions" class="user-actions">
+                <a href="#" class="action-btn server-btn" id="serverBtn">
+                    <i class="fab fa-discord"></i> Accedi al Server
+                </a>
+                <a href="#" class="action-btn upgrade-btn" id="upgradeBtn">
+                    <i class="fas fa-crown"></i> Diventa Advanced
+                </a>
+            </div>
+        </div>
+    </section>
+
+<!-- Exclusive Users Section -->
+<section class="exclusive-users">
+    <h2>Exclusive Users</h2>
+    <div class="exclusive-cards">
+        <div class="exclusive-card owner">
+            <i class="fas fa-crown"></i>
+            <h3>Server Owner</h3>
+            <ul>
+                <li>Gesualdo</li>
+            </ul>
+        </div>
+        
+        <div class="exclusive-card advanced">
+            <i class="fas fa-gem"></i>
+            <h3>Advanced</h3>
+            <ul>
+                <li>Daniele</li>
+                <li>Marco</li>
+                <li>Giuseppe</li>
+                <li>Daniele</li>
+                <li>Marco</li>
+                <li>Giuseppe</li>
+            </ul>
+        </div>
+        
+        <div class="exclusive-card sovereign">
+            <i class="fas fa-chess-king"></i>
+            <h3>Sovrano</h3>
+            <ul>
+                <li>Alessandro</li>
+                <li>Francesco</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+    <!-- Trading Section -->
+    <section id="trading" class="content-section">
+        <div class="navigation-arrows">
+            <button class="nav-arrow left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-arrow right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="content-container">
+            <h2>Trading Elite</h2>
+            <div class="points-grid">
+                <div class="points-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Analisi Tecnica</h3>
+                    <ul>
+                        <li>Pattern avanzati</li>
+                        <li>Indicatori custom</li>
+                        <li>Risk management</li>
+                        <li>Trading psychology</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Forex Trading</h3>
+                    <ul>
+                        <li>Major pairs</li>
+                        <li>Swing trading</li>
+                        <li>Position sizing</li>
+                        <li>Market analysis</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-university"></i>
+                    <h3>Stock Market</h3>
+                    <ul>
+                        <li>Value investing</li>
+                        <li>Growth stocks</li>
+                        <li>Portfolio management</li>
+                        <li>Market timing</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>Trading Mindset</h3>
+                    <ul>
+                        <li>Emotional control</li>
+                        <li>Decision making</li>
+                        <li>Strategy development</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-robot"></i>
+                    <h3>Automated Trading</h3>
+                    <ul>
+                        <li>Bot development</li>
+                        <li>Strategy automation</li>
+                        <li>Risk parameters</li>
+                        <li>Performance monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crypto Section -->
+    <section id="crypto" class="content-section">
+        <div class="navigation-arrows">
+            <button class="nav-arrow left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-arrow right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="content-container">
+            <h2>Crypto Universe</h2>
+            <div class="points-grid">
+                <div class="points-card">
+                    <i class="fas fa-bitcoin"></i>
+                    <h3>Bitcoin Analysis</h3>
+                    <ul>
+                        <li>On-chain analysis</li>
+                        <li>Market cycles</li>
+                        <li>Whale watching</li>
+                        <li>Price predictions</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>DeFi Mastery</h3>
+                    <ul>
+                        <li>Yield farming</li>
+                        <li>Liquidity pools</li>
+                        <li>Smart contracts</li>
+                        <li>Risk assessment</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>NFT Trading</h3>
+                    <ul>
+                        <li>Collection analysis</li>
+                        <li>Rarity tools</li>
+                        <li>Flipping strategy</li>
+                        <li>Market trends</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-chart-pie"></i>
+                    <h3>Portfolio Management</h3>
+                    <ul>
+                        <li>Asset allocation</li>
+                        <li>Risk management</li>
+                        <li>Rebalancing strategies</li>
+                        <li>Performance tracking</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security</h3>
+                    <ul>
+                        <li>Wallet security</li>
+                        <li>Safe storage</li>
+                        <li>Transaction safety</li>
+                        <li>Scam prevention</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Memecoin Section -->
+    <section id="memecoin" class="content-section">
+        <div class="navigation-arrows">
+            <button class="nav-arrow left">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-arrow right">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        <div class="content-container">
+            <h2>Memecoin Trading</h2>
+            <div class="points-grid">
+                <!-- Cards originali -->
+                <div class="points-card">
+                    <i class="fas fa-rocket"></i>
+                    <h3>Early Gems</h3>
+                    <ul>
+                        <li>Pre-launch analysis</li>
+                        <li>Community metrics</li>
+                        <li>Team verification</li>
+                        <li>Risk assessment</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-chart-bar"></i>
+                    <h3>Trading Strategy</h3>
+                    <ul>
+                        <li>Entry/Exit points</li>
+                        <li>Volume analysis</li>
+                        <li>Momentum trading</li>
+                        <li>Social signals</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Security</h3>
+                    <ul>
+                        <li>Contract audit</li>
+                        <li>Scam prevention</li>
+                        <li>Wallet security</li>
+                        <li>Safe trading</li>
+                    </ul>
+                </div>
+                <!-- Card aggiuntive -->
+                <div class="points-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Analysis</h3>
+                    <ul>
+                        <li>Social engagement</li>
+                        <li>Influencer tracking</li>
+                        <li>Trend analysis</li>
+                        <li>Sentiment tracking</li>
+                    </ul>
+                </div>
+                <div class="points-card">
+                    <i class="fas fa-search-dollar"></i>
+                    <h3>Market Research</h3>
+                    <ul>
+                        <li>Token economics</li>
+                        <li>Launch patterns</li>
+                        <li>Market cycles</li>
+                        <li>Competitor analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Gambling Section -->
+<section id="gambling" class="content-section">
+    <div class="navigation-arrows">
+        <button class="nav-arrow left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="content-container">
+        <h2>Gambling Elite</h2>
+        <div class="points-grid">
+            <div class="points-card">
+                <i class="fas fa-dice"></i>
+                <h3>Strategy</h3>
+                <ul>
+                    <li>Probability analysis</li>
+                    <li>Risk management</li>
+                    <li>Bankroll strategy</li>
+                    <li>Pattern recognition</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Statistics</h3>
+                <ul>
+                    <li>Data analysis</li>
+                    <li>Trend tracking</li>
+                    <li>Performance metrics</li>
+                    <li>ROI calculation</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Security</h3>
+                <ul>
+                    <li>Safe platforms</li>
+                    <li>Account protection</li>
+                    <li>Transaction safety</li>
+                    <li>Scam prevention</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-brain"></i>
+                <h3>Psychology</h3>
+                <ul>
+                    <li>Emotional control</li>
+                    <li>Decision making</li>
+                    <li>Discipline training</li>
+                    <li>Mindset development</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-book"></i>
+                <h3>Education</h3>
+                <ul>
+                    <li>Game theory</li>
+                    <li>Advanced techniques</li>
+                    <li>Market analysis</li>
+                    <li>Risk assessment</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Gaming Section -->
+<section id="gaming" class="content-section">
+    <div class="navigation-arrows">
+        <button class="nav-arrow left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="content-container">
+        <h2>Gaming Hub</h2>
+        <div class="points-grid">
+            <div class="points-card">
+                <i class="fas fa-gamepad"></i>
+                <h3>Competitive</h3>
+                <ul>
+                    <li>Tournament guides</li>
+                    <li>Team strategies</li>
+                    <li>Pro techniques</li>
+                    <li>Meta analysis</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-trophy"></i>
+                <h3>Achievements</h3>
+                <ul>
+                    <li>Ranking systems</li>
+                    <li>Progress tracking</li>
+                    <li>Goal setting</li>
+                    <li>Performance metrics</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-users"></i>
+                <h3>Community</h3>
+                <ul>
+                    <li>Team building</li>
+                    <li>Event planning</li>
+                    <li>Social networking</li>
+                    <li>Group activities</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-cogs"></i>
+                <h3>Technical</h3>
+                <ul>
+                    <li>Hardware guides</li>
+                    <li>Setup optimization</li>
+                    <li>Performance tips</li>
+                    <li>Troubleshooting</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-broadcast-tower"></i>
+                <h3>Streaming</h3>
+                <ul>
+                    <li>Stream setup</li>
+                    <li>Content creation</li>
+                    <li>Audience building</li>
+                    <li>Monetization</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Coding Section -->
+<section id="coding" class="content-section">
+    <div class="navigation-arrows">
+        <button class="nav-arrow left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="content-container">
+        <h2>Coding Lab</h2>
+        <div class="points-grid">
+            <div class="points-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <ul>
+                    <li>HTML/CSS/JS</li>
+                    <li>Frontend frameworks</li>
+                    <li>Responsive design</li>
+                    <li>Web optimization</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-database"></i>
+                <h3>Backend</h3>
+                <ul>
+                    <li>Server management</li>
+                    <li>Database design</li>
+                    <li>API development</li>
+                    <li>Security practices</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Dev</h3>
+                <ul>
+                    <li>iOS development</li>
+                    <li>Android basics</li>
+                    <li>Cross-platform</li>
+                    <li>App optimization</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-robot"></i>
+                <h3>AI & ML</h3>
+                <ul>
+                    <li>Machine learning</li>
+                    <li>Neural networks</li>
+                    <li>Data analysis</li>
+                    <li>AI applications</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3>Architecture</h3>
+                <ul>
+                    <li>System design</li>
+                    <li>Best practices</li>
+                    <li>Design patterns</li>
+                    <li>Scalability</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- School Section -->
+<section id="school" class="content-section">
+    <div class="navigation-arrows">
+        <button class="nav-arrow left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="content-container">
+        <h2>Study Hub</h2>
+        <div class="points-grid">
+            <div class="points-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Study Methods</h3>
+                <ul>
+                    <li>Time management</li>
+                    <li>Note-taking</li>
+                    <li>Memory techniques</li>
+                    <li>Focus strategies</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-book"></i>
+                <h3>Subjects</h3>
+                <ul>
+                    <li>Mathematics</li>
+                    <li>Sciences</li>
+                    <li>Languages</li>
+                    <li>Humanities</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-tasks"></i>
+                <h3>Organization</h3>
+                <ul>
+                    <li>Planning tools</li>
+                    <li>Goal setting</li>
+                    <li>Progress tracking</li>
+                    <li>Resource management</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-users"></i>
+                <h3>Group Study</h3>
+                <ul>
+                    <li>Team projects</li>
+                    <li>Peer tutoring</li>
+                    <li>Discussion groups</li>
+                    <li>Knowledge sharing</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-brain"></i>
+                <h3>Exam Prep</h3>
+                <ul>
+                    <li>Test strategies</li>
+                    <li>Review methods</li>
+                    <li>Stress management</li>
+                    <li>Performance tips</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Music Section -->
+<section id="music" class="content-section">
+    <div class="navigation-arrows">
+        <button class="nav-arrow left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="content-container">
+        <h2>Music World</h2>
+        <div class="points-grid">
+            <div class="points-card">
+                <i class="fas fa-music"></i>
+                <h3>Genres</h3>
+                <ul>
+                    <li>Hip-Hop/Rap</li>
+                    <li>Electronic/EDM</li>
+                    <li>Rock/Metal</li>
+                    <li>Pop/Indie</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-headphones"></i>
+                <h3>Production</h3>
+                <ul>
+                    <li>Beat making</li>
+                    <li>Sound design</li>
+                    <li>Mixing basics</li>
+                    <li>DAW tutorials</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-microphone"></i>
+                <h3>Recording</h3>
+                <ul>
+                    <li>Vocal techniques</li>
+                    <li>Equipment guides</li>
+                    <li>Studio setup</li>
+                    <li>Recording tips</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-guitar"></i>
+                <h3>Instruments</h3>
+                <ul>
+                    <li>Guitar lessons</li>
+                    <li>Piano basics</li>
+                    <li>Digital tools</li>
+                    <li>Practice methods</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-compact-disc"></i>
+                <h3>Industry</h3>
+                <ul>
+                    <li>Music business</li>
+                    <li>Marketing</li>
+                    <li>Distribution</li>
+                    <li>Networking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Film Section -->
+<section id="film" class="content-section">
+    <div class="navigation-arrows">
+        <button class="nav-arrow left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="content-container">
+        <h2>Cinema Hub</h2>
+        <div class="points-grid">
+            <div class="points-card">
+                <i class="fas fa-film"></i>
+                <h3>Genres</h3>
+                <ul>
+                    <li>Action/Adventure</li>
+                    <li>Drama/Thriller</li>
+                    <li>Sci-Fi/Fantasy</li>
+                    <li>Comedy/Horror</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-video"></i>
+                <h3>Production</h3>
+                <ul>
+                    <li>Filmmaking basics</li>
+                    <li>Camera techniques</li>
+                    <li>Lighting setup</li>
+                    <li>Sound design</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-edit"></i>
+                <h3>Post-Production</h3>
+                <ul>
+                    <li>Video editing</li>
+                    <li>Color grading</li>
+                    <li>Visual effects</li>
+                    <li>Audio mixing</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-pen-fancy"></i>
+                <h3>Screenwriting</h3>
+                <ul>
+                    <li>Story structure</li>
+                    <li>Character development</li>
+                    <li>Dialogue writing</li>
+                    <li>Script formatting</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-theater-masks"></i>
+                <h3>Analysis</h3>
+                <ul>
+                    <li>Film theory</li>
+                    <li>Critical reviews</li>
+                    <li>Genre studies</li>
+                    <li>Director styles</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Memes Section -->
+<section id="memes" class="content-section">
+    <div class="navigation-arrows">
+        <button class="nav-arrow left">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="nav-arrow right">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    <div class="content-container">
+        <h2>Meme Culture</h2>
+        <div class="points-grid">
+            <div class="points-card">
+                <i class="fas fa-laugh"></i>
+                <h3>Creation</h3>
+                <ul>
+                    <li>Design tools</li>
+                    <li>Template making</li>
+                    <li>Editing basics</li>
+                    <li>Style guides</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Trends</h3>
+                <ul>
+                    <li>Viral content</li>
+                    <li>Format analysis</li>
+                    <li>Trend prediction</li>
+                    <li>Community pulse</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-share-alt"></i>
+                <h3>Distribution</h3>
+                <ul>
+                    <li>Platform strategy</li>
+                    <li>Timing tactics</li>
+                    <li>Audience targeting</li>
+                    <li>Engagement tips</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-magic"></i>
+                <h3>Advanced Tech</h3>
+                <ul>
+                    <li>Video memes</li>
+                    <li>GIF creation</li>
+                    <li>Animation basics</li>
+                    <li>Special effects</li>
+                </ul>
+            </div>
+            <div class="points-card">
+                <i class="fas fa-users"></i>
+                <h3>Community</h3>
+                <ul>
+                    <li>Collaboration</li>
+                    <li>Feedback groups</li>
+                    <li>Event planning</li>
+                    <li>Content sharing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How to be Advanced Section -->
+<section id="beAdvanced" class="content-section">
+    <div class="content-container">
+        <h2>How to be Advanced</h2>
+        <div class="advanced-box">
+            <div class="advanced-content">
+                <i class="fas fa-crown"></i>
+                <h3>Join the Elite</h3>
+                <ul>
+                    <li>Access to private channels & exclusive content</li>
+                    <li>Direct mentorship & priority support</li>
+                    <li>Premium tools & advanced strategies</li>
+                </ul>
+                <p class="info-text">Entra per informazioni</p>
+                <a href="https://t.me/theeliteway" class="advanced-btn" target="_blank">
+                    <i class="fab fa-telegram"></i> Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Elite Community</h3>
+                <p>La tua strada verso il successo</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#trading">Trading</a>
+                <a href="#crypto">Crypto</a>
+                <a href="#gaming">Gaming</a>
+            </div>
+            <div class="footer-section">
+                <h3>Supporto</h3>
+                <a href="#">FAQ</a>
+                <a href="#">Contatti</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Elite Community. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
